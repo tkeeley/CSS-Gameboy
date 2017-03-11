@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS GameBoy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+      body{
+  background: #333;
+}
+
+#gameboy{
+  position: relative;
+  top: 50px;
+  margin: 0px auto;
+  height: 250px;
+  width: 150px;
+  background: #EEE;
+  border-radius: 10px 10px 30px 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px rgba(0,0,0,0.1);
+  /*cursor: pointer*/
+
+}
+#gameboy:before{
+  position: absolute;
+  width: 250px;
+  height: 10px;
+  border-bottom: 3px solid #E0E0E0;
+  content: "";
+}
+#gameboy:after{
+  position: absolute;
+  width: 120px;
+  height: 10px;
+  left: 12px;
+  border-left: 3px solid #E0E0E0;
+  border-right: 3px solid #E0E0E0;
+  content: "";
+}
+#screen{
+  position: absolute;
+  width: 126px;
+  height: 105px;
+  left: 12px;
+  top: 20px;
+  background: #777;
+  border-radius: 5px 5px 20px 5px;
+
+}
+#screen:before{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 13px;
+  left: 23px;
+  background:url(http://www.cupocode.com/img/cupocodebrand.png) 10px -60px no-repeat;
+  background-size:80%;
+  background-color: #AE9B32;
+  box-shadow: inset 2px 2px rgba(0,0,0,0.1);
+  content: "";
+  transition:all 2s;
+}
+#light{
+  position: relative;
+  margin: 0px auto;
+  height: 5px;
+  width: 5px;
+  top: -142px;
+  left: -52px;
+  border-radius: 100%;
+  box-shadow:1px 1px 0 #400 inset;
+  background: #600;
+  content: "";
+  }
+#gameboy:hover #screen:before{
+  background-position:10px 28px;
+}
+#gameboy:hover ~ #light{
+  background: #f00;
+  }
+#text{
+  position: absolute;
+  width: 13px;
+  height: 40px;
+  top: 130px;
+  left: 15px;
+  font-family:sans-serif;
+  font-weight:bold;
+  font-size:8px;
+  z-index: 998;
+  color:#0A1A7D;
+}
+#text em{
+  font-weight:normal
+}
+#dpad{
+  position: absolute;
+  width: 13px;
+  height: 40px;
+  top: 150px;
+  left: 25px;
+  background: #444;
+  border-radius: 3px;
+  z-index: 998;
+}
+
+#dpad:after{
+  position: absolute;
+  width: 40px;
+  height: 13px;
+  top: 13px;
+  left: -13px;
+  background: #444;
+  border-radius: 3px;
+  content: "";
+  z-index: 999;
+}
+#dpad:before{
+  position: absolute;
+  height: 13px;
+  width: 13px;
+  top: 13px;
+  border-radius: 100%;
+  background: #333;
+  content: "";
+  z-index: 1000;
+}
+#bevel{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 145px;
+  left: 7px;
+  background: #DFDFDF;
+  border-radius: 100%;
+}
+#bevel:before{
+  position: absolute;
+  width: 25px;
+  height: 50px;
+  left: 100px;
+  background: #DFDFDF;
+  border-radius: 12px;
+  -webkit-transform: rotate(45deg);
+  content: "";
+}
+#bevel:after{
+  position: absolute;
+  height: 20px;
+  width: 3px;
+  top: 80px;
+  left: 100px;
+  border-radius: 2px;
+  background: #DDD;
+  -webkit-transform: rotate(-45deg);
+  box-shadow: 7px 0px #DDD,
+              14px 0px #DDD,
+              21px 0px #DDD,
+              28px 0px #DDD,
+              35px 0px #DDD;
+  content: "";
+}
+#bt1{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 170px;
+  right: 31px;
+  border-radius: 100%;
+  background: #A93671;
+  box-shadow: 18px -18px #A93671;
+}
+#bt2{
+  position: absolute;
+  height: 25px;
+  width: 6px;
+  bottom: 25px;
+  left: 55px;
+  background: #999;
+  border-radius: 3px;
+  -webkit-transform: rotate(45deg);
+  box-shadow: 17px -17px #999;
+}
+
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <div id="gameboy">
+      <div id="screen"></div>
+      <div id="text">Cup&nbsp;0<em>&nbsp;Code</em></div>
+      <div id="dpad"></div>
+      <div id="bevel"></div>
+      <div id="bt1"></div>
+      <div id="bt2"></div>
+    </div>
+    <div id="light"></div>
+    
+  </body>
+</html>
